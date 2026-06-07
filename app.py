@@ -32,7 +32,8 @@ model = init_chat_model(
 
 
 embedding = GoogleGenerativeAIEmbeddings(
-    model="text-embedding-004"
+    model="text-embedding-004",
+    client_options={"api_version": "v1"}
 )
 
 
