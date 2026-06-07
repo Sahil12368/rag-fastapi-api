@@ -10,8 +10,8 @@ from langchain_core.output_parsers import StrOutputParser
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 import os
 
@@ -29,8 +29,10 @@ model = init_chat_model(
 )
 
 # Load embedding model once
-embedding = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+
+
+embedding = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001"
 )
 
 
